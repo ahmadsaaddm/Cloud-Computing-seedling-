@@ -31,7 +31,7 @@ We decided to go for a Neural Network as the classification model using tensorfl
 ### Interface
 The first step was to create our application folder, containing our Flask app python folder, as well as a docker file, a requirements file, and an upload file to allow the user to upload an image of the seedling. The interface allows us to load the model on the site and return an answer for the predicted class with a confidence percentage.
 
-![Application Interface](images/interface.png)
+![Application Interface](interface.png)
 
 ### Backend
 Initially, anyone could access the app but only users on the host internet connection were able to upload an image and get their prediction. We had to backtrack to change our backend file and to use 'CORS()' function in order to make our application functional to all users. 
@@ -72,7 +72,7 @@ Cluster details:
 ### Load Balancing
 In the EC2 dashboard, after setting up target groups (where we configured the health checks), we created an application load balancer as internet facing and configured it with our VPC using the security groups to distribute load among several target IPs.
 
-![Load Balancer Configuration](images/lb-1.png)
+![Load Balancer Configuration](lb-1.png)
 
 ### Autoscaling
 The first attempt with memory limitation autoscaling with 10 percent, and after utilizing a bigger portion of the memory for around 5 minutes, another task was executed to scale; and after 5 minutes with no hyper memory utilization, it also scaled down to a single task. 
@@ -81,7 +81,7 @@ We then decided to implement a more meaningful autoscaling by setting up a polic
 
 Therefore, we decided to deploy a scalability test using gattling and saw the following results:
 
-![Response Test Results](images/response-test.png)
+![Response Test Results](response-tst.png)
 
 ## Conclusions
 
